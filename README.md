@@ -43,3 +43,6 @@ https://github.com/AmnaEjaz488/Portfolio
 
 https://67ff5a1ff6b65feb19c71cd1--portfolioemployee.netlify.app/ 
 
+## deployed app screenshoot 
+
+![ deployed app link ](./assets/deploymentpic.png)
