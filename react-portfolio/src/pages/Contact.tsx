@@ -13,6 +13,8 @@ const Contact: React.FC = () => {
     const { name, value } = e.target;
     if (!value) {
       setErrors({ ...errors, [name]: `${name} is required` });
+    } else if (name === 'email' && !/\S+@\S+\.\S+/.test(value)) {
+      setErrors({ ...errors, email: 'Invalid email address' });
     } else {
       setErrors({ ...errors, [name]: '' });
     }
@@ -24,22 +26,39 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <section>
+    <section className="contact">
       <h2>Contact</h2>
       <form onSubmit={handleSubmit}>
         <label>
           Name:
-          <input type="text" name="name" value={formData.name} onChange={handleChange} onBlur={handleBlur} />
+          <input
+            type="text"
+            name="name"
+            value={formData.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
           {errors.name && <span>{errors.name}</span>}
         </label>
         <label>
           Email:
-          <input type="email" name="email" value={formData.email} onChange={handleChange} onBlur={handleBlur} />
+          <input
+            type="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          />
           {errors.email && <span>{errors.email}</span>}
         </label>
         <label>
           Message:
-          <textarea name="message" value={formData.message} onChange={handleChange} onBlur={handleBlur}></textarea>
+          <textarea
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            onBlur={handleBlur}
+          ></textarea>
           {errors.message && <span>{errors.message}</span>}
         </label>
         <button type="submit">Submit</button>

@@ -1,11 +1,10 @@
-
 import React from 'react';
 import Navigation from './Navigation';
 
 const Header: React.FC = () => {
   return (
-    <header>
-      <h1>Developer Name</h1>
+    <header className="header">
+      <h1>My Portfolio</h1>
       <Navigation />
     </header>
   );

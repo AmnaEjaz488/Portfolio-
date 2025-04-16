@@ -1,22 +1,20 @@
 import React from 'react';
-import { ProjectProps } from '../types/Project';
 
-const projects = [
-  { title: 'Project 1', image: '/assets/project1.jpg', appLink: '#', repoLink: '#' },
-  { title: 'Project 2', image: '/assets/project2.jpg', appLink: '#', repoLink: '#' },
-  // Add more projects
-];
+interface ProjectProps {
+  title: string;
+  image: string;
+  appLink: string;
+  repoLink: string;
+}
 
-const Project: React.FC = () => {
+const Project: React.FC<ProjectProps> = ({ title, image, appLink, repoLink }) => {
   return (
-    <section>
-      <h2>Portfolio</h2>
-      <div className="projects">
-        {projects.map((project, index) => (
-          <Project key={index} {...project} />
-        ))}
-      </div>
-    </section>
+    <div className="project">
+      <img src={image} alt={`${title} screenshot`} />
+      <h3>{title}</h3>
+      <a href={appLink} target="_blank" rel="noopener noreferrer">Deployed App</a>
+      <a href={repoLink} target="_blank" rel="noopener noreferrer">GitHub Repo</a>
+    </div>
   );
 };
 

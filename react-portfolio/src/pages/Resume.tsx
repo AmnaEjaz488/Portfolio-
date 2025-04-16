@@ -2,13 +2,14 @@ import React from 'react';
 
 const Resume: React.FC = () => {
   return (
-    <section>
+    <section className="resume">
       <h2>Resume</h2>
-      <a href="/path/to/resume.pdf" download>Download Resume</a>
+      <a href="/assets/resume.pdf" download>Download Resume</a>
       <ul>
-        <li>Proficiency 1</li>
-        <li>Proficiency 2</li>
-        <li>Proficiency 3</li>
+        <li>JavaScript</li>
+        <li>React</li>
+        <li>Python</li>
+        <li>Node.js</li>
       </ul>
     </section>
   );
